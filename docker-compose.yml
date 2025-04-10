@@ -1,0 +1,24 @@
+version: '3.8' # Specify compose file version
+
+services:
+  nadocast-monitor:
+    image: nadocast-monitor:latest # Use the image we built earlier
+    container_name: nadocast-monitor-app # Optional: Assign a specific container name
+    restart: unless-stopped # Optional: Restart policy
+    volumes:
+      - ./state:/app/state # Mount the local state directory into the container
+    # Use an external .env file (recommended for secrets)
+    # Ensure the .env file is in the same directory as docker-compose.yml
+    # or provide the full path to the env_file.
+    # Note: Docker Compose automatically looks for a file named '.env'
+    # in the project directory by default. If your variables are already
+    # in the existing .env file, you might not need the 'env_file' directive.
+    # However, explicitly defining it is clearer.
+    env_file:
+      - .env # Reads variables from the .env file in the same directory
+
+# Define the volume (though we are using a bind mount above)
+# If you wanted a Docker-managed volume instead of bind mount:
+# volumes:
+#   state:
+#     driver: local

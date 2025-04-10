@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    /* Base Options: */
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "target": "ES2022", // Target modern Node.js versions
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "moduleDetection": "force",
+    "isolatedModules": true,
+
+    /* Strictness */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+
+    /* If NOT transpiling with TypeScript: */
+    "module": "NodeNext",
+    "outDir": "dist",
+    "sourceMap": true,
+
+    /* If your code runs in the DOM: */
+    // "lib": ["es2022", "dom", "dom.iterable"],
+
+    /* If your code doesn't run in the DOM: */
+    "lib": ["es2022"],
+
+    /* Module Resolution Options */
+    "moduleResolution": "NodeNext",
+    "baseUrl": "./", // Allows absolute paths relative to the project root
+    "paths": {
+      "@/*": ["src/*"] // Example path alias
+    },
+
+    /* Emit Options */
+    "declaration": true, // Generate corresponding '.d.ts' file.
+    "declarationMap": true, // Generate a sourcemap for each corresponding '.d.ts' file.
+    "removeComments": false, // Keep comments in the output
+
+    /* Type Checking */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    /* Project Options */
+    "rootDir": "src", // Specify the root directory of input files
+  },
+  "include": ["src/**/*.ts"], // Specifies which files TypeScript should compile
+  "exclude": ["node_modules", "dist"] // Specifies files to exclude from compilation
+}

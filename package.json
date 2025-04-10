@@ -1,0 +1,43 @@
+{
+  "name": "nadocast-monitor",
+  "version": "1.0.0",
+  "description": "Monitors NADOCast for new tornado forecast runs and posts them to Bluesky.",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "dev": "tsc -w & node --watch dist/main.js",
+    "lint": "eslint src/**/*.ts",
+    "format": "prettier --write src/**/*.ts"
+  },
+  "keywords": [
+    "nadocast",
+    "bluesky",
+    "atproto",
+    "weather",
+    "monitor",
+    "bot"
+  ],
+  "author": "AI Assistant",
+  "license": "ISC",
+  "dependencies": {
+    "@atproto/api": "^0.12.1",
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/node": "^20.12.12",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
